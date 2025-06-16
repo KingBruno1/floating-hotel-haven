@@ -33,7 +33,7 @@ const ExpenditureManagement = () => {
       case "Paid": return "bg-green-400/20 text-green-400";
       case "Pending": return "bg-yellow-400/20 text-yellow-400";
       case "Overdue": return "bg-red-400/20 text-red-400";
-      default: return "bg-white/20 text-white";
+      default: return "bg-gray-200 text-black";
     }
   };
 
@@ -46,23 +46,23 @@ const ExpenditureManagement = () => {
   return (
     <div className="space-y-8">
       <div className="mb-8">
-        <h1 className="text-3xl font-bold text-white mb-2">Expenditure Management</h1>
-        <p className="text-white/70">Monitor and control hotel expenses, budgets, and financial metrics.</p>
+        <h1 className="text-3xl font-bold text-black mb-2">Expenditure Management</h1>
+        <p className="text-gray-600">Monitor and control hotel expenses, budgets, and financial metrics.</p>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         <div className="lg:col-span-2">
-          <DataCard title="Recent Expenses" icon={<DollarSign className="h-5 w-5 text-white" />}>
+          <DataCard title="Recent Expenses" icon={<DollarSign className="h-5 w-5 text-black" />}>
             <div className="space-y-4">
               {expenses.map((expense) => (
-                <div key={expense.id} className="p-4 bg-white/5 rounded-lg border border-white/10 hover:bg-white/10 transition-colors">
+                <div key={expense.id} className="p-4 bg-gray-50 rounded-lg border border-gray-200 hover:bg-gray-100 transition-colors">
                   <div className="flex justify-between items-start mb-3">
                     <div>
-                      <h3 className="text-lg font-semibold text-white">{expense.category}</h3>
-                      <p className="text-white/70 text-sm">{expense.date} • {expense.type}</p>
+                      <h3 className="text-lg font-semibold text-black">{expense.category}</h3>
+                      <p className="text-gray-600 text-sm">{expense.date} • {expense.type}</p>
                     </div>
                     <div className="text-right">
-                      <p className="text-xl font-bold text-white">${expense.amount.toLocaleString()}</p>
+                      <p className="text-xl font-bold text-black">${expense.amount.toLocaleString()}</p>
                       <span className={`px-2 py-1 rounded-full text-xs ${getStatusColor(expense.status)}`}>
                         {expense.status}
                       </span>
@@ -74,19 +74,19 @@ const ExpenditureManagement = () => {
           </DataCard>
 
           <div className="mt-6">
-            <DataCard title="Budget vs Actual" icon={<PieChart className="h-5 w-5 text-white" />}>
+            <DataCard title="Budget vs Actual" icon={<PieChart className="h-5 w-5 text-black" />}>
               <div className="space-y-4">
                 {budgetCategories.map((item, index) => (
-                  <div key={index} className="p-3 bg-white/5 rounded-lg">
+                  <div key={index} className="p-3 bg-gray-50 rounded-lg">
                     <div className="flex justify-between items-center mb-2">
-                      <span className="text-white font-medium">{item.category}</span>
-                      <span className="text-white/70">{item.percentage}%</span>
+                      <span className="text-black font-medium">{item.category}</span>
+                      <span className="text-gray-600">{item.percentage}%</span>
                     </div>
-                    <div className="flex justify-between text-sm text-white/70 mb-2">
+                    <div className="flex justify-between text-sm text-gray-600 mb-2">
                       <span>Spent: ${item.spent.toLocaleString()}</span>
                       <span>Budget: ${item.budgeted.toLocaleString()}</span>
                     </div>
-                    <div className="w-full bg-white/10 rounded-full h-2">
+                    <div className="w-full bg-gray-200 rounded-full h-2">
                       <div 
                         className={`h-2 rounded-full ${getBudgetColor(item.percentage)}`}
                         style={{width: `${item.percentage}%`}}
@@ -100,63 +100,63 @@ const ExpenditureManagement = () => {
         </div>
 
         <div className="space-y-6">
-          <DataCard title="Monthly Summary" icon={<TrendingUp className="h-5 w-5 text-white" />}>
+          <DataCard title="Monthly Summary" icon={<TrendingUp className="h-5 w-5 text-black" />}>
             <div className="space-y-4">
-              <div className="p-3 bg-white/5 rounded-lg">
+              <div className="p-3 bg-gray-50 rounded-lg">
                 <div className="flex items-center gap-2 mb-2">
                   <TrendingDown className="h-4 w-4 text-red-400" />
-                  <span className="text-white font-medium">Total Expenses</span>
+                  <span className="text-black font-medium">Total Expenses</span>
                 </div>
-                <p className="text-2xl font-bold text-white">$33,600</p>
+                <p className="text-2xl font-bold text-black">$33,600</p>
                 <p className="text-red-400 text-sm">+8% from last month</p>
               </div>
               
-              <div className="p-3 bg-white/5 rounded-lg">
+              <div className="p-3 bg-gray-50 rounded-lg">
                 <div className="flex items-center gap-2 mb-2">
                   <TrendingUp className="h-4 w-4 text-green-400" />
-                  <span className="text-white font-medium">Revenue</span>
+                  <span className="text-black font-medium">Revenue</span>
                 </div>
-                <p className="text-2xl font-bold text-white">$58,000</p>
+                <p className="text-2xl font-bold text-black">$58,000</p>
                 <p className="text-green-400 text-sm">+12% from last month</p>
               </div>
               
-              <div className="p-3 bg-white/5 rounded-lg">
+              <div className="p-3 bg-gray-50 rounded-lg">
                 <div className="flex items-center gap-2 mb-2">
                   <DollarSign className="h-4 w-4 text-blue-400" />
-                  <span className="text-white font-medium">Net Profit</span>
+                  <span className="text-black font-medium">Net Profit</span>
                 </div>
-                <p className="text-2xl font-bold text-white">$24,400</p>
+                <p className="text-2xl font-bold text-black">$24,400</p>
                 <p className="text-blue-400 text-sm">42% profit margin</p>
               </div>
             </div>
           </DataCard>
 
-          <DataCard title="Expense Categories" icon={<PieChart className="h-5 w-5 text-white" />}>
+          <DataCard title="Expense Categories" icon={<PieChart className="h-5 w-5 text-black" />}>
             <div className="space-y-3">
-              <div className="flex justify-between items-center p-2 bg-white/5 rounded-lg">
-                <span className="text-white/70">Staff Costs</span>
-                <span className="text-white font-semibold">74%</span>
+              <div className="flex justify-between items-center p-2 bg-gray-50 rounded-lg">
+                <span className="text-gray-600">Staff Costs</span>
+                <span className="text-black font-semibold">74%</span>
               </div>
-              <div className="flex justify-between items-center p-2 bg-white/5 rounded-lg">
-                <span className="text-white/70">Utilities</span>
-                <span className="text-white font-semibold">10%</span>
+              <div className="flex justify-between items-center p-2 bg-gray-50 rounded-lg">
+                <span className="text-gray-600">Utilities</span>
+                <span className="text-black font-semibold">10%</span>
               </div>
-              <div className="flex justify-between items-center p-2 bg-white/5 rounded-lg">
-                <span className="text-white/70">Supplies</span>
-                <span className="text-white font-semibold">6%</span>
+              <div className="flex justify-between items-center p-2 bg-gray-50 rounded-lg">
+                <span className="text-gray-600">Supplies</span>
+                <span className="text-black font-semibold">6%</span>
               </div>
-              <div className="flex justify-between items-center p-2 bg-white/5 rounded-lg">
-                <span className="text-white/70">Maintenance</span>
-                <span className="text-white font-semibold">5%</span>
+              <div className="flex justify-between items-center p-2 bg-gray-50 rounded-lg">
+                <span className="text-gray-600">Maintenance</span>
+                <span className="text-black font-semibold">5%</span>
               </div>
-              <div className="flex justify-between items-center p-2 bg-white/5 rounded-lg">
-                <span className="text-white/70">Marketing</span>
-                <span className="text-white font-semibold">4%</span>
+              <div className="flex justify-between items-center p-2 bg-gray-50 rounded-lg">
+                <span className="text-gray-600">Marketing</span>
+                <span className="text-black font-semibold">4%</span>
               </div>
             </div>
           </DataCard>
 
-          <DataCard title="Quick Actions" icon={<DollarSign className="h-5 w-5 text-white" />}>
+          <DataCard title="Quick Actions" icon={<DollarSign className="h-5 w-5 text-black" />}>
             <div className="space-y-3">
               <button className="w-full p-3 bg-blue-400/20 text-blue-400 rounded-lg hover:bg-blue-400/30 transition-colors">
                 Add Expense
