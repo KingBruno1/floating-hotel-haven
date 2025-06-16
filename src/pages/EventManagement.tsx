@@ -51,27 +51,27 @@ const EventManagement = () => {
       case "Booked": return "bg-red-400/20 text-red-400";
       case "Available": return "bg-green-400/20 text-green-400";
       case "Maintenance": return "bg-gray-400/20 text-gray-400";
-      default: return "bg-white/20 text-white";
+      default: return "bg-gray-200 text-gray-600";
     }
   };
 
   return (
     <div className="space-y-8">
       <div className="mb-8">
-        <h1 className="text-3xl font-bold text-white mb-2">Event Management</h1>
-        <p className="text-white/70">Organize and manage hotel events, venues, and bookings.</p>
+        <h1 className="text-3xl font-bold text-black mb-2">Event Management</h1>
+        <p className="text-gray-600">Organize and manage hotel events, venues, and bookings.</p>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         <div className="lg:col-span-2">
-          <DataCard title="Upcoming Events" icon={<Calendar className="h-5 w-5 text-white" />}>
+          <DataCard title="Upcoming Events" icon={<Calendar className="h-5 w-5 text-black" />}>
             <div className="space-y-4">
               {events.map((event) => (
-                <div key={event.id} className="p-4 bg-white/5 rounded-lg border border-white/10 hover:bg-white/10 transition-colors">
+                <div key={event.id} className="p-4 bg-white/60 rounded-lg border border-gray-200 hover:bg-white/80 transition-colors">
                   <div className="flex justify-between items-start mb-3">
                     <div>
-                      <h3 className="text-lg font-semibold text-white">{event.title}</h3>
-                      <p className="text-white/70">{event.organizer}</p>
+                      <h3 className="text-lg font-semibold text-black">{event.title}</h3>
+                      <p className="text-gray-600">{event.organizer}</p>
                     </div>
                     <span className={`px-2 py-1 rounded-full text-xs ${getStatusColor(event.status)}`}>
                       {event.status}
@@ -80,20 +80,20 @@ const EventManagement = () => {
                   
                   <div className="grid grid-cols-2 gap-4 mb-3">
                     <div className="flex items-center gap-2">
-                      <Calendar className="h-4 w-4 text-blue-400" />
-                      <span className="text-white text-sm">{event.date}</span>
+                      <Calendar className="h-4 w-4 text-black" />
+                      <span className="text-black text-sm">{event.date}</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <Clock className="h-4 w-4 text-blue-400" />
-                      <span className="text-white text-sm">{event.time}</span>
+                      <Clock className="h-4 w-4 text-black" />
+                      <span className="text-black text-sm">{event.time}</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <MapPin className="h-4 w-4 text-blue-400" />
-                      <span className="text-white text-sm">{event.venue}</span>
+                      <MapPin className="h-4 w-4 text-black" />
+                      <span className="text-black text-sm">{event.venue}</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <Users className="h-4 w-4 text-blue-400" />
-                      <span className="text-white text-sm">{event.guests} guests</span>
+                      <Users className="h-4 w-4 text-black" />
+                      <span className="text-black text-sm">{event.guests} guests</span>
                     </div>
                   </div>
                 </div>
@@ -103,17 +103,17 @@ const EventManagement = () => {
         </div>
 
         <div className="space-y-6">
-          <DataCard title="Venue Status" icon={<MapPin className="h-5 w-5 text-white" />}>
+          <DataCard title="Venue Status" icon={<MapPin className="h-5 w-5 text-black" />}>
             <div className="space-y-3">
               {venues.map((venue, index) => (
-                <div key={index} className="p-3 bg-white/5 rounded-lg">
+                <div key={index} className="p-3 bg-white/60 rounded-lg border border-gray-200">
                   <div className="flex justify-between items-center mb-2">
-                    <span className="text-white font-medium">{venue.name}</span>
+                    <span className="text-black font-medium">{venue.name}</span>
                     <span className={`px-2 py-1 rounded-full text-xs ${getStatusColor(venue.status)}`}>
                       {venue.status}
                     </span>
                   </div>
-                  <div className="flex justify-between text-sm text-white/70">
+                  <div className="flex justify-between text-sm text-gray-600">
                     <span>Capacity: {venue.capacity}</span>
                     <span>${venue.price}/day</span>
                   </div>
@@ -122,28 +122,28 @@ const EventManagement = () => {
             </div>
           </DataCard>
 
-          <DataCard title="Event Statistics" icon={<Calendar className="h-5 w-5 text-white" />}>
+          <DataCard title="Event Statistics" icon={<Calendar className="h-5 w-5 text-black" />}>
             <div className="space-y-4">
               <div className="flex justify-between items-center">
-                <span className="text-white/70">This Month</span>
-                <span className="text-white font-semibold">12 events</span>
+                <span className="text-gray-600">This Month</span>
+                <span className="text-black font-semibold">12 events</span>
               </div>
               <div className="flex justify-between items-center">
-                <span className="text-white/70">Next Month</span>
-                <span className="text-white font-semibold">8 events</span>
+                <span className="text-gray-600">Next Month</span>
+                <span className="text-black font-semibold">8 events</span>
               </div>
               <div className="flex justify-between items-center">
-                <span className="text-white/70">Revenue</span>
+                <span className="text-gray-600">Revenue</span>
                 <span className="text-green-400 font-semibold">$45,200</span>
               </div>
               <div className="flex justify-between items-center">
-                <span className="text-white/70">Avg Guests</span>
-                <span className="text-white font-semibold">180</span>
+                <span className="text-gray-600">Avg Guests</span>
+                <span className="text-black font-semibold">180</span>
               </div>
             </div>
           </DataCard>
 
-          <DataCard title="Quick Actions" icon={<Users className="h-5 w-5 text-white" />}>
+          <DataCard title="Quick Actions" icon={<Users className="h-5 w-5 text-black" />}>
             <div className="space-y-3">
               <button className="w-full p-3 bg-blue-400/20 text-blue-400 rounded-lg hover:bg-blue-400/30 transition-colors">
                 New Event

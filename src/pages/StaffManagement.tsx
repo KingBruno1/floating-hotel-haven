@@ -25,7 +25,7 @@ const StaffManagement = () => {
       case "Active": return "bg-green-400/20 text-green-400";
       case "On Leave": return "bg-yellow-400/20 text-yellow-400";
       case "Inactive": return "bg-red-400/20 text-red-400";
-      default: return "bg-white/20 text-white";
+      default: return "bg-gray-200 text-gray-600";
     }
   };
 
@@ -38,34 +38,34 @@ const StaffManagement = () => {
   return (
     <div className="space-y-8">
       <div className="mb-8">
-        <h1 className="text-3xl font-bold text-white mb-2">Staff Management</h1>
-        <p className="text-white/70">Manage your hotel staff, schedules, and performance metrics.</p>
+        <h1 className="text-3xl font-bold text-black mb-2">Staff Management</h1>
+        <p className="text-gray-600">Manage your hotel staff, schedules, and performance metrics.</p>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         <div className="lg:col-span-2">
-          <DataCard title="Staff Directory" icon={<Users className="h-5 w-5 text-white" />}>
+          <DataCard title="Staff Directory" icon={<Users className="h-5 w-5 text-black" />}>
             <div className="space-y-4">
               {staff.map((member) => (
-                <div key={member.id} className="p-4 bg-white/5 rounded-lg border border-white/10 hover:bg-white/10 transition-colors">
+                <div key={member.id} className="p-4 bg-white/60 rounded-lg border border-gray-200 hover:bg-white/80 transition-colors">
                   <div className="flex justify-between items-start mb-3">
                     <div>
-                      <h3 className="text-lg font-semibold text-white">{member.name}</h3>
-                      <p className="text-white/70">{member.position}</p>
-                      <p className="text-white/50 text-sm">{member.department}</p>
+                      <h3 className="text-lg font-semibold text-black">{member.name}</h3>
+                      <p className="text-gray-600">{member.position}</p>
+                      <p className="text-gray-500 text-sm">{member.department}</p>
                     </div>
                     <div className="text-right">
                       <span className={`px-2 py-1 rounded-full text-xs ${getStatusColor(member.status)}`}>
                         {member.status}
                       </span>
-                      <p className="text-white/70 text-sm mt-1">{member.shift} Shift</p>
+                      <p className="text-gray-600 text-sm mt-1">{member.shift} Shift</p>
                     </div>
                   </div>
                   
                   <div className="flex justify-between items-center">
                     <div className="flex items-center gap-2">
                       <Award className="h-4 w-4 text-yellow-400" />
-                      <span className="text-white/70 text-sm">Performance</span>
+                      <span className="text-gray-600 text-sm">Performance</span>
                     </div>
                     <span className={`font-semibold ${getPerformanceColor(member.performance)}`}>
                       {member.performance}%
@@ -78,15 +78,15 @@ const StaffManagement = () => {
         </div>
 
         <div className="space-y-6">
-          <DataCard title="Department Overview" icon={<Clock className="h-5 w-5 text-white" />}>
+          <DataCard title="Department Overview" icon={<Clock className="h-5 w-5 text-black" />}>
             <div className="space-y-3">
               {departments.map((dept, index) => (
-                <div key={index} className="p-3 bg-white/5 rounded-lg">
+                <div key={index} className="p-3 bg-white/60 rounded-lg border border-gray-200">
                   <div className="flex justify-between items-center mb-2">
-                    <span className="text-white font-medium">{dept.name}</span>
-                    <span className="text-white/70 text-sm">{dept.active}/{dept.count}</span>
+                    <span className="text-black font-medium">{dept.name}</span>
+                    <span className="text-gray-600 text-sm">{dept.active}/{dept.count}</span>
                   </div>
-                  <div className="w-full bg-white/10 rounded-full h-2">
+                  <div className="w-full bg-gray-200 rounded-full h-2">
                     <div 
                       className="bg-blue-400 h-2 rounded-full" 
                       style={{width: `${(dept.active / dept.count) * 100}%`}}
@@ -97,7 +97,7 @@ const StaffManagement = () => {
             </div>
           </DataCard>
 
-          <DataCard title="Quick Actions" icon={<Phone className="h-5 w-5 text-white" />}>
+          <DataCard title="Quick Actions" icon={<Phone className="h-5 w-5 text-black" />}>
             <div className="space-y-3">
               <button className="w-full p-3 bg-blue-400/20 text-blue-400 rounded-lg hover:bg-blue-400/30 transition-colors">
                 Schedule Meeting
@@ -114,23 +114,23 @@ const StaffManagement = () => {
             </div>
           </DataCard>
 
-          <DataCard title="Staff Statistics" icon={<Award className="h-5 w-5 text-white" />}>
+          <DataCard title="Staff Statistics" icon={<Award className="h-5 w-5 text-black" />}>
             <div className="space-y-4">
               <div className="flex justify-between items-center">
-                <span className="text-white/70">Total Staff</span>
-                <span className="text-white font-semibold">42</span>
+                <span className="text-gray-600">Total Staff</span>
+                <span className="text-black font-semibold">42</span>
               </div>
               <div className="flex justify-between items-center">
-                <span className="text-white/70">On Duty</span>
+                <span className="text-gray-600">On Duty</span>
                 <span className="text-green-400 font-semibold">39</span>
               </div>
               <div className="flex justify-between items-center">
-                <span className="text-white/70">On Leave</span>
+                <span className="text-gray-600">On Leave</span>
                 <span className="text-yellow-400 font-semibold">3</span>
               </div>
               <div className="flex justify-between items-center">
-                <span className="text-white/70">Avg Performance</span>
-                <span className="text-white font-semibold">91%</span>
+                <span className="text-gray-600">Avg Performance</span>
+                <span className="text-black font-semibold">91%</span>
               </div>
             </div>
           </DataCard>
