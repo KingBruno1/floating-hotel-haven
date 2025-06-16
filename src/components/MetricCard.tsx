@@ -11,9 +11,9 @@ interface MetricCardProps {
 
 const MetricCard = ({ title, value, icon, trend, trendDirection }: MetricCardProps) => {
   return (
-    <div className="backdrop-blur-md bg-black/10 border border-black/20 rounded-2xl p-6 shadow-2xl hover:shadow-3xl transition-all duration-300 hover:bg-black/15 group">
+    <div className="backdrop-blur-md bg-white/80 border border-gray-200 rounded-2xl p-6 shadow-2xl hover:shadow-3xl transition-all duration-300 hover:bg-white/90 group">
       <div className="flex items-center justify-between mb-4">
-        <div className="p-3 bg-black/20 rounded-xl group-hover:bg-black/30 transition-colors duration-300">
+        <div className="p-3 bg-white/60 rounded-xl group-hover:bg-white/80 transition-colors duration-300 border border-gray-200">
           {icon}
         </div>
         {trend && (

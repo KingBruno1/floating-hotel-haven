@@ -40,22 +40,22 @@ export function HotelSidebar() {
 
   return (
     <Sidebar className="border-r-0 bg-transparent">
-      <div className="h-full backdrop-blur-md bg-black/10 border-r border-black/20 shadow-2xl">
+      <div className="h-full backdrop-blur-md bg-white/80 border-r border-gray-200 shadow-2xl">
         <SidebarContent className="bg-transparent">
-          <div className="p-6 border-b border-black/20">
+          <div className="p-6 border-b border-gray-200">
             <div className="flex items-center gap-3">
               <Hotel className="h-8 w-8 text-black" />
               {!isCollapsed && (
                 <div>
                   <h2 className="text-lg font-bold text-black">Luxury Hotel</h2>
-                  <p className="text-sm text-black/70">Management Portal</p>
+                  <p className="text-sm text-gray-600">Management Portal</p>
                 </div>
               )}
             </div>
           </div>
           
           <SidebarGroup>
-            <SidebarGroupLabel className="text-black/70 px-6 py-4">
+            <SidebarGroupLabel className="text-gray-600 px-6 py-4">
               Navigation
             </SidebarGroupLabel>
             <SidebarGroupContent className="px-3">
@@ -69,8 +69,8 @@ export function HotelSidebar() {
                         className={({ isActive }) =>
                           `flex items-center gap-3 px-3 py-3 rounded-xl transition-all duration-200 backdrop-blur-sm ${
                             isActive
-                              ? "bg-black/20 text-black shadow-lg border border-black/30"
-                              : "text-black/80 hover:bg-black/10 hover:text-black"
+                              ? "bg-white/90 text-black shadow-lg border border-gray-200"
+                              : "text-black hover:bg-white/60 hover:text-black"
                           }`
                         }
                       >
