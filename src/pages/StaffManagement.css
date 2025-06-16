@@ -1,0 +1,284 @@
+
+.staff-management-page {
+  padding: 0;
+}
+
+.page-header {
+  margin-bottom: 2rem;
+}
+
+.page-header h1 {
+  font-size: 1.875rem;
+  font-weight: bold;
+  color: #000;
+  margin-bottom: 0.5rem;
+}
+
+.page-header p {
+  color: #6b7280;
+}
+
+.staff-management-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 1024px) {
+  .staff-management-grid {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+.sidebar-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.icon {
+  height: 1.25rem;
+  width: 1.25rem;
+  color: #000;
+}
+
+/* Staff List */
+.staff-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.staff-card {
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 0.5rem;
+  border: 1px solid #e5e7eb;
+  transition: background-color 0.3s;
+}
+
+.staff-card:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.staff-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.75rem;
+}
+
+.staff-info h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #000;
+  margin: 0;
+}
+
+.staff-position {
+  color: #6b7280;
+  margin: 0;
+}
+
+.staff-department {
+  color: #9ca3af;
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+.staff-meta {
+  text-align: right;
+}
+
+.staff-status {
+  padding: 0.25rem 0.5rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+}
+
+.status-active {
+  background-color: rgba(34, 197, 94, 0.2);
+  color: #22c55e;
+}
+
+.status-leave {
+  background-color: rgba(251, 191, 36, 0.2);
+  color: #fbbf24;
+}
+
+.status-inactive {
+  background-color: rgba(239, 68, 68, 0.2);
+  color: #ef4444;
+}
+
+.staff-shift {
+  color: #6b7280;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+.staff-performance {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.performance-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.performance-icon {
+  height: 1rem;
+  width: 1rem;
+  color: #fbbf24;
+}
+
+.performance-label {
+  color: #6b7280;
+  font-size: 0.875rem;
+}
+
+.performance-score {
+  font-weight: 600;
+}
+
+.performance-excellent {
+  color: #22c55e;
+}
+
+.performance-good {
+  color: #fbbf24;
+}
+
+.performance-poor {
+  color: #ef4444;
+}
+
+/* Departments */
+.departments-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.department-item {
+  padding: 0.75rem;
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 0.5rem;
+  border: 1px solid #e5e7eb;
+}
+
+.department-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.department-name {
+  color: #000;
+  font-weight: 500;
+}
+
+.department-count {
+  color: #6b7280;
+  font-size: 0.875rem;
+}
+
+.department-bar {
+  width: 100%;
+  background-color: #e5e7eb;
+  border-radius: 9999px;
+  height: 0.5rem;
+}
+
+.department-fill {
+  background-color: #3b82f6;
+  height: 0.5rem;
+  border-radius: 9999px;
+}
+
+/* Actions */
+.actions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.action-btn {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-weight: 500;
+}
+
+.action-btn.primary {
+  background-color: rgba(59, 130, 246, 0.2);
+  color: #3b82f6;
+}
+
+.action-btn.primary:hover {
+  background-color: rgba(59, 130, 246, 0.3);
+}
+
+.action-btn.success {
+  background-color: rgba(34, 197, 94, 0.2);
+  color: #22c55e;
+}
+
+.action-btn.success:hover {
+  background-color: rgba(34, 197, 94, 0.3);
+}
+
+.action-btn.warning {
+  background-color: rgba(251, 191, 36, 0.2);
+  color: #fbbf24;
+}
+
+.action-btn.warning:hover {
+  background-color: rgba(251, 191, 36, 0.3);
+}
+
+.action-btn.purple {
+  background-color: rgba(168, 85, 247, 0.2);
+  color: #a855f7;
+}
+
+.action-btn.purple:hover {
+  background-color: rgba(168, 85, 247, 0.3);
+}
+
+/* Statistics */
+.stats-summary {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.summary-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.summary-label {
+  color: #6b7280;
+}
+
+.summary-value {
+  color: #000;
+  font-weight: 600;
+}
+
+.summary-value.active {
+  color: #22c55e;
+}
+
+.summary-value.warning {
+  color: #fbbf24;
+}
